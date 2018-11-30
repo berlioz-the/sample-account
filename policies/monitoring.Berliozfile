@@ -1,0 +1,4 @@
+- kind: policy
+  name: distributed-tracing-provider
+  cluster: account
+  value: zipkin

@@ -1,0 +1,24 @@
+{
+  "name": "berlioz-sample-account-api",
+  "version": "1.0.0",
+  "description": "berlioz-sample-account-api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/berlioz-the/sample-account.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "berlioz-connector": "^1.0.99",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "json-pretty-html": "^1.2.0",
+    "lodash": "^4.17.11",
+    "promise": "^8.0.2"
+  }
+}

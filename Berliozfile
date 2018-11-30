@@ -1,0 +1,8 @@
+---
+kind: cluster
+name: account
+
+provides:
+    api:
+        service: api
+        public: true

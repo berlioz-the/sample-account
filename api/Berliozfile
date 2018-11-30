@@ -1,0 +1,20 @@
+---
+kind: service
+cluster: account
+name: api
+
+provides:
+    default:
+        port: 3000
+        protocol: http
+
+consumes:
+    - cluster: tmdb
+      endpoint: default
+
+environment:
+    TMDB_KEY: 17edb6dfe2eb6ed457af80cd41485114
+
+resources:
+    memory:
+        min: 100
