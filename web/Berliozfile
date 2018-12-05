@@ -1,7 +1,7 @@
 ---
 kind: service
 cluster: account
-name: api
+name: web
 
 provides:
     default:
@@ -9,12 +9,7 @@ provides:
         protocol: http
 
 consumes:
-    - cluster: tmdb
-      endpoint: default
-    - database: movies
-
-environment:
-    TMDB_KEY: 17edb6dfe2eb6ed457af80cd41485114
+    - service: api
 
 resources:
     memory:

@@ -3,6 +3,9 @@ kind: cluster
 name: account
 
 provides:
+    web:
+        service: web
+        public: true
     api:
         service: api
         public: true

@@ -1,0 +1,44 @@
+<script>
+$(function() {
+    var form = $('#search-form');
+    var searchResult = $('#search-form-result');
+    var searchCard = $('#search-card');
+
+    $(form).submit(function(event) {
+        event.preventDefault();
+
+        var formData = $(form).serialize();
+        $.post( $(form).attr('action'), $(form).serialize() )
+            .done(function(response) {
+                $(searchCard).removeClass('red');
+                $(searchCard).addClass('green');
+
+                $(searchResult).html(response);
+            })
+            .fail(function(data) {
+                $(searchCard).removeClass('green');
+                $(searchCard).addClass('red');
+
+                $(searchResult).text('Oops! Something went wrong.');
+            });
+    });
+});
+</script>
+
+<div id="search-card" class="card green">
+    <div class="card-header">
+        Movie Search
+    </div>
+    <div class="card-body">
+        <form id="search-form" 
+              method="POST" action="/search" >
+            <div class="form-group">
+                <input type="text" class="form-control" id="query" name="query" placeholder="Search Criteria">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div class="card-body">
+        <div id="search-form-result"></div>
+    </div>
+</div>

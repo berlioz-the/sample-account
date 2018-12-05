@@ -1,0 +1,28 @@
+<div class="card eastern-blue">
+    <div class="card-header">
+        Movie Watchlist
+    </div>
+    <div class="card-body">
+        <% if (watchlist && (watchlist.length > 0)) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var movie of watchlist) {
+                    %>
+                    <tr>
+                        <th scope="row"><%= movie.name %></th>
+                        <td><%= movie.year %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <% } else { %>
+            No movies in the watchlist. Search and add titles below.
+        <% } %>
+    </div>
+</div>

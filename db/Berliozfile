@@ -1,0 +1,10 @@
+---
+kind: database
+cluster: account
+name: movies
+class: nosql
+subClass: dynamodb
+
+hashKey:
+    name: id
+    type: Number
