@@ -16,7 +16,14 @@ app.get('/', function (req, response) {
     });
 });
 
-app.get('/search', function (req, response) {
+app.get('/api', function (req, response) {
+    response.send({
+        message: 'Hello from Account :: Api Service',
+        appId: process.env.BERLIOZ_TASK_ID
+    });
+});
+
+app.get('/api/search', function (req, response) {
     console.log(req.query);
     var options = { url: '/3/search/movie?api_key=' + process.env.TMDB_KEY + '&query=' + req.query.query, json: true };
     return berlioz.cluster('tmdb').request(options)
@@ -33,7 +40,7 @@ app.get('/search', function (req, response) {
         });
 });
 
-app.post('/add', function (req, response) {
+app.post('/api/add', function (req, response) {
     console.log(req.body);
 
     if (!req.body.id) {
@@ -60,7 +67,7 @@ app.post('/add', function (req, response) {
         });
 });
 
-app.get('/list', function (req, response) {
+app.get('/api/list', function (req, response) {
     var docClient = berlioz.database('movies').client(AWS);
     return docClient.scan({})
         .then(data => {
@@ -72,7 +79,7 @@ app.get('/list', function (req, response) {
         });
 });
 
-app.get('/watch', function (req, response) {
+app.get('/api/watch', function (req, response) {
     console.log(req.query);
     var item = {};
     return Promise.resolve()

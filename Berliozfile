@@ -8,4 +8,4 @@ provides:
         public: true
     api:
         service: api
-        public: false
+        public: true

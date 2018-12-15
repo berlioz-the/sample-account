@@ -1,0 +1,9 @@
+- kind: policy
+  name: join-load-balancers
+  enable: false
+  cluster: account
+  service: api
+  endpoint: default
+  config:
+    service: web
+    endpoint: default

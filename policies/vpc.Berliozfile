@@ -1,0 +1,19 @@
+- kind: policy
+  enabled: false
+  name: object-substitute
+  deployment: prod
+  region: us-west-2
+  cluster: account
+  meta: vpc 
+  target: [prod, account]
+  value: vpc-081e76e85ed196c5b
+
+- kind: policy
+  enabled: false
+  name: object-substitute
+  deployment: prod
+  region: us-east-1
+  cluster: account
+  meta: vpc 
+  target: [prod, account]
+  value: vpc-03248f979b218de2a

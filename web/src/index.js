@@ -15,7 +15,7 @@ app.get('/', function (req, response) {
 
     return Promise.resolve()
         .then(() => {
-            var options = { url: '/list', json: true, resolveWithFullResponse: true };
+            var options = { url: '/api/list', json: true, resolveWithFullResponse: true };
             return berlioz.service('api').request(options)
                 .then(result => {
                     console.log(result);
@@ -56,7 +56,7 @@ app.post('/search', function (req, response) {
 
     return Promise.resolve()
         .then(() => {
-            var options = { url: '/search?query=' + req.body.query, json: true, resolveWithFullResponse: true };
+            var options = { url: '/api/search?query=' + req.body.query, json: true, resolveWithFullResponse: true };
             return berlioz.service('api').request(options)
                 .then(result => {
                     console.log(result);
@@ -93,7 +93,7 @@ app.post('/add', function (req, response) {
     console.log(req.params)
     console.log(req.body)
 
-    var options = { method: 'POST', url: '/add', body: req.body, json: true};
+    var options = { method: 'POST', url: '/api/add', body: req.body, json: true};
     return berlioz.service('api').request(options)
         .then(() => {
             response.redirect("/");
